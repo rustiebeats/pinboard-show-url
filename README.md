@@ -2,10 +2,8 @@
 
 A Tampermonkey/Violentmonkey userscript that displays the destination URL as a visible, clickable link beneath each bookmark title on [Pinboard](https://pinboard.in).
 
-## Screenshot
 
-> Before: only the title is shown
-> After: the destination URL appears below it in smaller muted text
+> Before: only the title is shown <br> After: the destination URL appears below it in smaller muted text
 
 ## Works on
 
