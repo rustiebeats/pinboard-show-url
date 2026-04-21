@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Pinboard — Show URL Under Title
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  Display the destination URL as a visible, clickable link beneath each bookmark title on Pinboard
 // @match        https://pinboard.in/recent/
 // @match        https://pinboard.in/popular/
-// @match        https://pinboard.in/t:*/
-// @match        https://pinboard.in/u:*/
+// @match        https://pinboard.in/t:*
+// @match        https://pinboard.in/u:*
 // @grant        none
 // ==/UserScript==
 
