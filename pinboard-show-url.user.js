@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinboard — Show URL Under Title
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      1.8
 // @description  Display the destination URL as a visible, clickable link beneath each bookmark title on Pinboard
 // @match        https://pinboard.in/recent/
 // @match        https://pinboard.in/popular/
@@ -34,6 +34,9 @@
         color: #555;
         text-decoration: underline;
       }
+      body.popular .pb-url-display {
+        margin-bottom: 1px;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -58,6 +61,8 @@
       container.appendChild(div);
     } else {
       titleAnchor.insertAdjacentElement('afterend', div);
+      const next = div.nextSibling;
+      if (next && next.nodeName === 'BR') next.remove();
     }
   }
 
@@ -87,6 +92,7 @@
   }
 
   injectStyles();
+  if (isPopular) document.body.classList.add('popular');
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', addUrls);
