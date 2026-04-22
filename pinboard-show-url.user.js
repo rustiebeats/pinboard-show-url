@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pinboard — Show URL Under Title
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
 // @description  Display the destination URL as a visible, clickable link beneath each bookmark title on Pinboard
 // @match        https://pinboard.in/recent/
 // @match        https://pinboard.in/popular/
@@ -61,6 +61,8 @@
       container.appendChild(div);
     } else {
       titleAnchor.insertAdjacentElement('afterend', div);
+      const next = div.nextSibling;
+      if (next && next.nodeName === 'BR') next.remove();
     }
   }
 
